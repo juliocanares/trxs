@@ -34,7 +34,7 @@ const query = `
         Transactions.UserId = ?
     GROUP BY
         YEAR(transactedAt),
-        YEAR(transactedAt),
+        MONTH(transactedAt),
         thirdParty) AS FilteredTable ON FilteredTable.UserId = Transactions.UserId
     AND FilteredTable.transactedAt = Transactions.transactedAt
     AND FilteredTable.thirdParty = Transactions.thirdParty;
